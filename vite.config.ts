@@ -3,7 +3,8 @@ import react from "@vitejs/plugin-react";
 import svgr from "vite-plugin-svgr";
 import prerender from "@prerenderer/rollup-plugin";
 import path from "path";
-import chrome from 'chrome-aws-lambda'; // chrome-aws-lambda 가져오기
+import chrome from 'chrome-aws-lambda';
+import puppeteer from 'puppeteer-core';
 
 export default defineConfig({
   plugins: [
@@ -19,14 +20,21 @@ export default defineConfig({
         },
         rendererOptions: {
           headless: true,
-          args: chrome.args, // chrome-aws-lambda의 args 사용
+          args: chrome.args,
           executablePath: async () => {
-            return await chrome.executablePath; // chrome-aws-lambda의 executablePath 사용
+            const executablePath = await chrome.executablePath;
+            if (!executablePath) {
+              return puppeteer.executablePath();
+            }
+            return executablePath;
           },
           ignoreHTTPSErrors: true,
         },
-      })
-    ] : []), // 로컬에서는 프리렌더링 비활성화
+        // 명시적으로 타입 캐스팅
+        maxConcurrentRoutes: 1 as number,
+        renderAfterTime: 500 as number,
+      } as any)
+    ] : []),
   ],
   resolve: {
     alias: {
