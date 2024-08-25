@@ -17,8 +17,7 @@ export default defineConfig({
       maxConcurrentRoutes: 1,
       renderAfterTime: 500,
       headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-      executablePath: process.env.VERCEL ? '/tmp/chrome' : undefined, // Vercel 환경에서만 /tmp/chrome 사용
+      args: ['--no-sandbox', '--disable-setuid-sandbox'], // 실행 환경에 맞는 옵션
     },
     postProcess(renderedRoute) {
       renderedRoute.html = renderedRoute.html
