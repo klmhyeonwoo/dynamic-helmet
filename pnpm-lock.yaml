@@ -8,12 +8,18 @@ dependencies:
   axios:
     specifier: ^1.7.2
     version: 1.7.2
+  chrome-aws-lambda:
+    specifier: ^10.1.0
+    version: 10.1.0(puppeteer-core@23.1.1)
   prettier:
     specifier: ^3.2.5
     version: 3.2.5
   puppeteer:
     specifier: ^23.1.1
     version: 23.1.1(typescript@5.4.5)
+  puppeteer-core:
+    specifier: ^23.1.1
+    version: 23.1.1
   react:
     specifier: ^18.2.0
     version: 18.3.1
@@ -1763,6 +1769,16 @@ packages:
       htmlparser2: 3.10.1
       lodash: 4.17.21
       parse5: 3.0.3
+    dev: false
+
+  /chrome-aws-lambda@10.1.0(puppeteer-core@23.1.1):
+    resolution: {integrity: sha512-NZQVf+J4kqG4sVhRm3WNmOfzY0OtTSm+S8rg77pwePa9RCYHzhnzRs8YvNI6L9tALIW6RpmefWiPURt3vURXcw==}
+    engines: {node: '>= 10.16'}
+    peerDependencies:
+      puppeteer-core: ^10.1.0
+    dependencies:
+      lambdafs: 2.1.1
+      puppeteer-core: 23.1.1
     dev: false
 
   /chromium-bidi@0.6.4(devtools-protocol@0.0.1312386):
@@ -3570,6 +3586,14 @@ packages:
     dependencies:
       json-buffer: 3.0.1
     dev: true
+
+  /lambdafs@2.1.1:
+    resolution: {integrity: sha512-x5k8JcoJWkWLvCVBzrl4pzvkEHSgSBqFjg3Dpsc4AcTMq7oUMym4cL/gRTZ6VM4mUMY+M0dIbQ+V1c1tsqqanQ==}
+    engines: {node: '>= 10.16'}
+    hasBin: true
+    dev: false
+    bundledDependencies:
+      - tar-fs
 
   /levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
