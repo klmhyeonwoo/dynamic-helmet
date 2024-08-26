@@ -5,7 +5,6 @@ import prerender from "@prerenderer/rollup-plugin";
 import path from "path";
 import { htmlPrerender } from "vite-plugin-html-prerender";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [svgr(), htmlPrerender({
     staticDir: path.join(__dirname, "dist"),
