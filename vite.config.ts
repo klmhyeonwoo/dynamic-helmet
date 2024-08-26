@@ -1,9 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import svgr from "vite-plugin-svgr";
-import prerender from "@prerenderer/rollup-plugin";
 import path from "path";
-import { htmlPrerender } from "vite-plugin-html-prerender";
 import vitePrerender from 'vite-plugin-prerender-k'
 
 export default defineConfig({
@@ -11,7 +9,7 @@ export default defineConfig({
     // Required - The path to the vite-outputted app to prerender.
     staticDir: path.join(__dirname, 'dist'),
     // Required - Routes to render.
-    routes: ['/', '/about', '/some/deep/nested/route'],
+    routes: ['/', '/test'],
   }),],
   resolve: {
     alias: {
