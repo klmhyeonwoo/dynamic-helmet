@@ -2,5 +2,10 @@
   "routes": [
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "/index.html" }
-  ]
+  ],
+  "build": {
+    "env": {
+      "LD_LIBRARY_PATH": "/opt/buildhome/.apt/usr/lib/x86_64-linux-gnu"
+    }
+  }
 }
