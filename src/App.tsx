@@ -4,6 +4,7 @@ import reactLogo from "./assets/react.svg";
 
 import viteLogo from "/vite.svg";
 import "@/style/global.css";
+import Routerino from "routerino";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,6 +27,17 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+        <Routerino
+            routes={[
+                {
+                    path: "/",
+                    element: <p>Hello, world!</p>,
+                    title: "Hello!",
+                    description: "Lorem ipsum, etc...",
+                },
+            ]}
+            titlePostfix=" | Foo.com"
+        />
     </>
   );
 }
