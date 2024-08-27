@@ -1,0 +1,12 @@
+{
+  "headless": true,
+  "sourceDir": "dist",
+  "allowedHost": [
+    "*"
+  ],
+  "port": 5173,
+  "urls": [
+    "", "/test"
+  ],
+  "blockedResourceType": []
+}
