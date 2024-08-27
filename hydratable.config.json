@@ -1,0 +1,8 @@
+{
+  "webroot": "./dist",
+  "host": "http://localhost",
+  "port": 5173,
+  "crawlingUrls": ["/", "/test"],
+  "delay": 1500,
+  "htmlPrefix": "<!DOCTYPE html>"
+}

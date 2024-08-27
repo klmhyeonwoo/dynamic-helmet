@@ -1,13 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 
 import {Routers} from "@/router";
 import {HelmetProvider} from "react-helmet-async";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-    <React.StrictMode>
+const element = (<React.StrictMode>
         <HelmetProvider>
             <Routers />
         </HelmetProvider>
-    </React.StrictMode>,
-);
+    </React.StrictMode>)
+
+const rootElement = document.getElementById("root")!;
+
+if (rootElement.hasChildNodes()){
+    hydrateRoot(rootElement, element);
+} else {
+    const root = createRoot(rootElement);
+    root.render(element);
+}
